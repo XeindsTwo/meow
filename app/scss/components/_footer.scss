@@ -1,0 +1,50 @@
+.footer {
+  padding: 28px 0;
+  font-family: $singleDay;
+
+  &__inner {
+    @include flex-between-center-gap(30);
+  }
+
+  &__left {
+    @include flex-align-center(20);
+  }
+
+  &__nav {
+    @include flex-align-center(20);
+    position: relative;
+
+    &::before {
+      content: "";
+      display: flex;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #CFC9C9;
+    }
+  }
+
+  &__list {
+    @include flex-align-center(20);
+  }
+
+  &__link {
+    color: rgba($black, .5);
+    border-radius: 5px;
+    border: 1px solid transparent;
+    transition: color .4s, border .4s;
+
+    &:hover {
+      color: $black;
+    }
+
+    &:focus {
+      color: #2C7D3B;
+      border-color: #2C7D3B;
+    }
+  }
+
+  &__copy {
+    color: rgba($black, .56);
+  }
+}

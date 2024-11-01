@@ -1,0 +1,28 @@
+.about {
+  padding: 125px 0;
+  position: relative;
+
+  &__img {
+    @include objectCoverBg;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  &__content {
+    max-width: 470px;
+    position: relative;
+    z-index: 50;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+  }
+
+  &__text {
+    @include flex-column(20);
+    font-family: $singleDay;
+    font-size: 28px;
+  }
+}
