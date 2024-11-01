@@ -1,6 +1,8 @@
 .buy {
   @include bg;
   background-position: bottom;
+  position: relative;
+  z-index: 50;
   padding: 100px 0;
   background-image: url("../images/buy.png");
   border-radius: 24px;

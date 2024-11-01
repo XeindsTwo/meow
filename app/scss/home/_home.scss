@@ -4,6 +4,8 @@
   border-radius: 0 0 24px 24px;
   background-image: url("../images/home.png");
   color: $white;
+  position: relative;
+  z-index: 50;
 
   &__inner {
     display: flex;
