@@ -1,11 +1,18 @@
 .buy {
   @include bg;
+  background-position: bottom;
   padding: 100px 0;
   background-image: url("../../images/buy.png");
   border-radius: 24px;
 
   &__swiper {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin: 0 -25px;
     position: relative;
+    max-width: 1220px;
+    margin: 0 auto;
   }
 
   &__title {
@@ -33,14 +40,17 @@
 
   &__text {
     font-family: $singleDay;
+
+    &.short {
+      max-width: 400px;
+    }
   }
 
   &__btn {
     @include flex-center;
-    @include top50;
-    position: absolute;
     width: 50px;
     height: 50px;
+    flex-shrink: 0;
     border-radius: 50%;
     border: 1px solid transparent;
     transition: background-color .4s, border .4s;
@@ -78,6 +88,7 @@
     }
 
     &-slide {
+      cursor: pointer;
       height: auto;
     }
 
@@ -101,5 +112,12 @@
 
   .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 0;
+  }
+
+  .swiper-button-disabled {
+    opacity: .6;
+    pointer-events: none;
+    user-select: none;
+    transition: all .4s;
   }
 }
