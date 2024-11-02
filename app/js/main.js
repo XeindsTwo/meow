@@ -35,7 +35,7 @@ function scrollToTarget(targetId) {
     headerNav.classList.remove('active');
     menuBtn.classList.remove('active');
     setTimeout(() => {
-      const targetOffset = targetSection.offsetTop - 50;
+      const targetOffset = targetSection.offsetTop - 10;
       window.scrollTo({top: targetOffset, behavior: 'smooth'});
     }, 400);
   }

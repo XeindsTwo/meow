@@ -19,6 +19,9 @@
   @media (max-width: 680px) {
     padding: 60px 0 30px;
   }
+  @media (max-width: 660px) {
+    margin-top: 0;
+  }
   @include r($phone) {
     padding: 45px 0 30px;
   }
