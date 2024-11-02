@@ -5,19 +5,26 @@ const anchors = document.querySelectorAll('a.header__link.mobile');
 
 new Swiper('.swiper', {
   spaceBetween: 28,
-  slidesPerView: 2,
-  slidesPerGroup: 1,
   speed: 700,
   keyboard: true,
-
   pagination: {
     el: '.swiper-pagination',
     clickable: true
   },
-
   navigation: {
     prevEl: '.buy__btn--left',
     nextEl: '.buy__btn--right'
+  },
+  breakpoints: {
+    940: {
+      slidesPerView: 2,
+      slidesPerGroup: 1,
+    },
+    320: {
+      autoHeight: true,
+      slidesPerView: 1,
+      slidesPerGroup: 1
+    }
   }
 });
 

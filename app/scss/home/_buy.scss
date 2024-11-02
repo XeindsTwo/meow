@@ -7,21 +7,67 @@
   background-image: url("../images/buy.png");
   border-radius: 24px;
   margin-top: -20px;
+  @include r($desktop) {
+    padding: 80px 0;
+  }
+  @media (max-width: 940px) {
+    padding: 70px 0;
+  }
+  @include r($tablet) {
+    padding-bottom: 40px;
+  }
+  @media (max-width: 680px) {
+    padding: 60px 0 30px;
+  }
+  @include r($phone) {
+    padding: 45px 0 30px;
+  }
 
   &__swiper {
     display: flex;
     align-items: center;
     gap: 25px;
-    margin: 0 -25px;
     position: relative;
     max-width: 1220px;
     margin: 0 auto;
+    @media (max-width: 1260px) {
+      gap: 15px;
+    }
+    @include r($lg) {
+      gap: 8px;
+    }
+    @media (max-width: 530px) {
+      display: block;
+    }
+    @media (max-width: 405px) {
+      margin: 0 -3px;
+    }
+  }
+
+  &__navigation {
+    @include flex-align-center(20);
+    justify-content: center;
+    display: none;
+    margin-bottom: 20px;
+    @media (max-width: 530px) {
+      display: flex;
+
+      .buy__btn {
+        display: flex;
+      }
+    }
   }
 
   &__title {
     margin: 0 auto 58px;
     color: $white;
     text-align: center;
+    @media (max-width: 680px) {
+      margin-bottom: 50px;
+    }
+    @include r($sm) {
+      margin-bottom: 40px;
+    }
   }
 
   &__item {
@@ -30,6 +76,9 @@
     background: $white;
     height: 100%;
     box-shadow: 6px 6px 0 0 #449F55;
+    @include r($tablet) {
+      padding: 28px 25px;
+    }
   }
 
   &__step {
@@ -39,10 +88,31 @@
     line-height: 1.1;
     color: $black;
     margin-bottom: 23px;
+    @include r($desktop) {
+      font-size: 34px;
+    }
+    @include r($lg) {
+      font-size: 30px;
+      letter-spacing: 1px;
+    }
+    @include r($tablet) {
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+    @include r($phone) {
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+    @media (max-width: 400px) {
+      font-size: 24px;
+    }
   }
 
   &__text {
     font-family: $singleDay;
+    @include r($phone) {
+      font-size: 20px;
+    }
 
     &.short {
       max-width: 400px;
@@ -57,18 +127,47 @@
     border-radius: 50%;
     border: 1px solid transparent;
     transition: background-color .4s, border .4s;
+    @media (max-width: 1080px) {
+      width: 45px;
+      height: 45px;
+    }
+    @media (max-width: 530px) {
+      display: none;
+      background-color: $white;
+      svg path {
+        fill: $black;
+      }
+    }
+    @include r($phone) {
+      width: 41px;
+      height: 41px;
+    }
 
     &:hover {
       background-color: #30be4d;
+      @media (max-width: 530px) {
+        svg path {
+          fill: $white;
+        }
+      }
+    }
+
+    svg {
+      width: 12px;
+      height: auto;
+      @media (max-width: 1080px) {
+        width: 10px;
+      }
+      @include r($phone) {
+        width: 8px;
+      }
     }
 
     &--left {
       left: -75px;
 
       svg {
-        width: 12px;
         transform: translateX(-1px);
-        height: auto;
       }
     }
 
@@ -76,15 +175,16 @@
       right: -75px;
 
       svg {
-        width: 12px;
         transform: translateX(1px);
-        height: auto;
       }
     }
   }
 
   .swiper {
     padding: 0 6px 68px;
+    @media (max-width: 680px) {
+      padding-bottom: 60px;
+    }
 
     &-wrapper {
       box-sizing: border-box;

@@ -2,7 +2,10 @@
   padding: 28px 0;
   font-family: $singleDay;
   @include r($lg) {
-    padding-bottom: 20px;
+    padding: 45px 0 20px;
+  }
+  @include r($sm) {
+    padding-top: 50px;
   }
 
   &__inner {
