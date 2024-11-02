@@ -1,13 +1,30 @@
 .footer {
   padding: 28px 0;
   font-family: $singleDay;
+  @include r($lg) {
+    padding-bottom: 20px;
+  }
 
   &__inner {
     @include flex-between-center-gap(30);
+    @include r($lg) {
+      flex-direction: column;
+    }
   }
 
   &__left {
     @include flex-align-center(20);
+    @include r($lg) {
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    img {
+      @include r($lg) {
+        height: auto;
+        width: 130px;
+      }
+    }
   }
 
   &__nav {
@@ -21,6 +38,9 @@
       height: 6px;
       border-radius: 50%;
       background-color: #CFC9C9;
+      @include r($lg) {
+        display: none;
+      }
     }
   }
 
@@ -33,6 +53,18 @@
     border-radius: 5px;
     border: 1px solid transparent;
     transition: color .4s, border .4s;
+    @media (max-width: 1100px) {
+      font-size: 22px;
+    }
+    @include r($lg) {
+      font-size: 24px;
+    }
+    @include r($sm) {
+      font-size: 22px;
+    }
+    @include r($phone) {
+      font-size: 20px;
+    }
 
     &:hover {
       color: $black;
@@ -46,5 +78,18 @@
 
   &__copy {
     color: rgba($black, .56);
+    @include r($desktop) {
+      font-size: 22px;
+    }
+    @include r($sm) {
+      font-size: 20px;
+    }
+    @include r($phone) {
+      font-size: 18px;
+      text-align: center;
+    }
+    @media (max-width: 390px) {
+      max-width: 230px;
+    }
   }
 }

@@ -6,6 +6,9 @@
   color: $white;
   position: relative;
   z-index: 50;
+  @include r($lg) {
+    height: auto;
+  }
 
   &__inner {
     display: flex;
@@ -14,6 +17,15 @@
     align-items: center;
     padding: 40px 0;
     height: 100%;
+    @include r($lg) {
+      padding: 105px 0;
+    }
+    @include r($sm) {
+      padding: 80px 0;
+    }
+    @media (max-width: 530px) {
+      padding: 60px 0 70px;
+    }
   }
 
   &__list {
@@ -36,6 +48,12 @@
         border-radius: 50%;
       }
     }
+
+    &:nth-child(3), &:nth-child(4), &:last-child {
+      @media (max-width: 530px) {
+        display: none;
+      }
+    }
   }
 
   &__link {
@@ -46,6 +64,9 @@
     border-radius: 4px;
     border: 1px solid transparent;
     transition: color .5s, border .4s;
+    @media (max-width: 530px) {
+      font-size: 24px;
+    }
 
     &:hover {
       color: rgba($white, .6);
@@ -59,6 +80,46 @@
 
   &__img {
     margin-bottom: 40px;
+    @media (max-width: 1300px) {
+      height: auto;
+      width: 800px;
+    }
+    @media (max-width: 1100px) {
+      width: 740px;
+    }
+    @include r($lg) {
+      width: 690px;
+    }
+    @media (max-width: 860px) {
+      width: 640px;
+    }
+    @include r($tablet) {
+      width: 590px;
+    }
+    @media (max-width: 700px) {
+      width: 530px;
+    }
+    @include r($sm) {
+      width: 490px;
+    }
+    @media (max-width: 550px) {
+      width: 460px;
+    }
+    @media (max-width: 530px) {
+      width: 420px;
+    }
+    @media (max-width: 468px) {
+      width: 380px;
+    }
+    @media (max-width: 410px) {
+      width: 350px;
+    }
+    @media (max-width: 395px) {
+      width: 330px;
+    }
+    @media (max-width: 380px) {
+      width: 310px;
+    }
   }
 
   &__text {
@@ -68,14 +129,35 @@
     letter-spacing: 0.38px;
     text-align: center;
     margin-bottom: 52px;
+    @include r($lg) {
+      font-size: 26px;
+      max-width: 630px;
+      letter-spacing: 0.6px;
+    }
+    @media (max-width: 660px) {
+      font-size: 24px;
+      max-width: 600px;
+    }
+    @media (max-width: 600px) {
+      max-width: 460px;
+      letter-spacing: 0.9px;
+    }
+    @include r($phone) {
+      font-size: 22px;
+    }
   }
 
   &__exchanges {
     @include flex-align-center(16);
+    @include r($sm) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
 
   &__exchange {
-    height: 100%;
+    display: flex;
+    align-self: stretch;
     position: relative;
 
     &:hover {
@@ -158,6 +240,12 @@
       padding: 22px 30px;
       border: 2px solid #1d9333;
       transition: background-color .5s, color .5s, border .4s;
+      @include r($phone) {
+        padding: 15px 26px;
+      }
+      @media (max-width: 390px) {
+        padding: 15px 22px;
+      }
 
       &.white {
         background-color: $white;

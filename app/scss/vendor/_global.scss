@@ -30,6 +30,9 @@
   background-color: #F2FFF4;
   position: relative;
   overflow-x: hidden;
+  @include r($lg) {
+    font-size: 22px;
+  }
 
   &::before {
     @include pseudo;
